@@ -29,8 +29,8 @@ namespace Uween
 
         protected override float Value
         {
-            get { return GetImage().fillAmount; }
-            set { GetImage().fillAmount = value; }
+            get => GetImage().fillAmount;
+            set => GetImage().fillAmount = value;
         }
     }
 }

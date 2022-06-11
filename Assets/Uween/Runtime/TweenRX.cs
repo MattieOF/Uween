@@ -16,7 +16,7 @@ namespace Uween
 
         protected override float Value
         {
-            get { return Vector.x; }
+            get => Vector.x;
             set
             {
                 var v = Vector;

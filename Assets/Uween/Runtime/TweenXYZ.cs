@@ -21,8 +21,8 @@ namespace Uween
 
         protected override Vector3 Value
         {
-            get { return Vector; }
-            set { Vector = value; }
+            get => Vector;
+            set => Vector = value;
         }
     }
 }

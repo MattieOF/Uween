@@ -39,8 +39,8 @@ namespace Uween
 
         protected override Vector4 Value
         {
-            get { return GetGraphic().color; }
-            set { GetGraphic().color = value; }
+            get => GetGraphic().color;
+            set => GetGraphic().color = value;
         }
     }
 }

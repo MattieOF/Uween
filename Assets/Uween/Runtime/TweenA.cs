@@ -29,7 +29,7 @@ namespace Uween
 
         protected override float Value
         {
-            get { return GetGraphic().color.a; }
+            get => GetGraphic().color.a;
             set
             {
                 var g = GetGraphic();

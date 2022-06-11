@@ -8,8 +8,8 @@ namespace Uween
 
         protected override Vector3 Value
         {
-            get { return Vector; }
-            set { Vector = value; }
+            get => Vector;
+            set => Vector = value;
         }
 
         private Transform T;
@@ -29,8 +29,8 @@ namespace Uween
     {
         protected override Vector3 Vector
         {
-            get { return GetTransform().localPosition; }
-            set { GetTransform().localPosition = value; }
+            get => GetTransform().localPosition;
+            set => GetTransform().localPosition = value;
         }
     }
 
@@ -38,8 +38,8 @@ namespace Uween
     {
         protected override Vector3 Vector
         {
-            get { return GetTransform().localRotation.eulerAngles; }
-            set { GetTransform().localRotation = Quaternion.Euler(value); }
+            get => GetTransform().localRotation.eulerAngles;
+            set => GetTransform().localRotation = Quaternion.Euler(value);
         }
     }
 
@@ -47,8 +47,8 @@ namespace Uween
     {
         protected override Vector3 Vector
         {
-            get { return GetTransform().localScale; }
-            set { GetTransform().localScale = value; }
+            get => GetTransform().localScale;
+            set => GetTransform().localScale = value;
         }
     }
 }

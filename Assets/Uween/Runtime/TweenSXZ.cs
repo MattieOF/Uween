@@ -26,7 +26,7 @@ namespace Uween
 
         protected override Vector2 Value
         {
-            get { return new Vector2(Vector.x, Vector.z); }
+            get => new Vector2(Vector.x, Vector.z);
             set
             {
                 var v = Vector;

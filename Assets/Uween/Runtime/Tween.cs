@@ -30,19 +30,13 @@ namespace Uween
         /// Total duration of this tween (sec).
         /// </summary>
         /// <value>The duration.</value>
-        public float Duration
-        {
-            get { return Mathf.Max(0f, duration); }
-        }
+        public float Duration => Mathf.Max(0f, duration);
 
         /// <summary>
         /// Current playing position (sec).
         /// </summary>
         /// <value>The position.</value>
-        public float Position
-        {
-            get { return Mathf.Max(0f, elapsedTime - DelayTime); }
-        }
+        public float Position => Mathf.Max(0f, elapsedTime - DelayTime);
 
         /// <summary>
         /// Delay for starting tween (sec).
@@ -50,8 +44,8 @@ namespace Uween
         /// <value>The delay time.</value>
         public float DelayTime
         {
-            get { return Mathf.Max(0f, delayTime); }
-            set { delayTime = value; }
+            get => Mathf.Max(0f, delayTime);
+            set => delayTime = value;
         }
 
         /// <summary>
@@ -60,18 +54,15 @@ namespace Uween
         /// <value>The easing.</value>
         public Easings Easing
         {
-            get { return easing ?? Linear.EaseNone; }
-            set { easing = value; }
+            get => easing ?? Linear.EaseNone;
+            set => easing = value;
         }
 
         /// <summary>
         /// Whether tween has been completed or not.
         /// </summary>
         /// <value><c>true</c> if this tween is complete; otherwise, <c>false</c>.</value>
-        public bool IsComplete
-        {
-            get { return Position >= Duration; }
-        }
+        public bool IsComplete => Position >= Duration;
 
         /// <summary>
         /// Occurs when on tween complete.
@@ -129,15 +120,11 @@ namespace Uween
 
             UpdateValue(Easing, t, duration);
 
-            if (!enabled)
-            {
-                if (OnComplete != null)
-                {
-                    var callback = OnComplete;
-                    OnComplete = null;
-                    callback();
-                }
-            }
+            if (enabled) return;
+            if (OnComplete == null) return;
+            var callback = OnComplete;
+            OnComplete = null;
+            callback();
         }
 
         protected abstract void UpdateValue(Easings e, float t, float d);
